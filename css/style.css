@@ -1,115 +1,94 @@
 *{
+    box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0;    
 }
-main{
-    display: flex;
-    justify-content: center;    
-    flex-direction: column;        
-    background-color: #000000;
-    color: rgb(255, 255, 255); 
-    font: normal 20px Arial;
-    height: 100svh;        
-}       
+html{
+    background-color: black;
+    color: white;
+    font: normal 20px Arial;      
+}
 #container{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 40px;       
+    margin: auto;
+    margin-top: 4rem; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background: #1f2041;
-    width: 90%;
-    height: 80svh;
-    align-self: center;
+    max-width: 90%;
+    border-radius: 40px;
+    height: fit-content;
+    padding: 1em;
+    gap: 1rem;          
 }
-#top-title{      
-    font-size: 52px;    
-    /* background: #201c1c; */
-    height: 10%;
+#top-title{
+    grid-column: span 2;
     display: flex;
-    align-items: flex-end;             
-}
-h4{
-    margin-left: 100px;
-    margin-bottom: -30px;
+    justify-content: space-between;
+    align-items: center;   
     text-shadow: -6px 6px 0px rgb(0, 0, 0);
-    /* background-color: #8d8774; */
+    font-size: 2.5em;
+    margin-left: 3rem;
+    margin-right: 2rem;                             
 }
 #top-logo{
-    align-self: center;
-    padding-left: 40%;
-    padding-top: 4%;  
-    /* background-color: #6e5d2b; */
     filter:drop-shadow(-4px 4px 0px rgba(0, 0, 0, 0.25));
-}      
+}
+
 #baners{
-    /* background: #772d2d; */
-    display:flex;
-    width: 50%;
-    min-height: 90%;
+    display: flex;    
+    justify-content: center;
     align-items: center;
-    justify-content: center; 
-    float:left;       
+    margin-bottom: 4rem;          
 }
 #poster{
-    filter:drop-shadow(-10px 10px 0px rgba(0, 0, 0, 0.25));
-}       
-#description{
-    /* background: #776d2d; */
-    display:flex;
-    flex-wrap: wrap;
-    float: right;
-    width: 50%;
-    height: 90%;
-    max-height: fit-content;
-    flex-direction: column;
-    justify-content: flex-end;   
+    filter:drop-shadow(-10px 10px 0px rgba(0, 0, 0, 0.25));    
 } 
-.texto{
-    font: normal 20px Arial;                     
+
+#description{
+    display:flex;
+    max-width: auto;    
+    min-height: fit-content;
+    flex-direction: column;
+    /* fazer barra de scrollagem interna? */
 }
 #card{
     background: #7a7976;
     border-radius: 40px;
     justify-content: center;
-    max-width: 90%;
-    box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.25);      
+    max-width: 90%; /* consertar padding da direita em algumas res */
+    box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.25);
+    min-height: fit-content;      
 }
 #title{
-    margin: 30px;
-    margin-bottom: 30px;
-    font-size: 28px;    
-    /* background: #4e472e; */
+    margin: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;     
 }
 #sinopse{
-    margin: 30px;
-    /* background: #EAC435; */
+    margin: 1.5rem;   
 }
 #genero{
-    margin: 30px;
-    margin-top: 50px;
-    /* background: #4146c4; */
+    margin: 1.5rem;
+    margin-top: 2.5rem;   
 }
 #info{
-    margin: 30px;    
-    /* background: #c48041; */
+    margin: 1.5rem;  
 }
-            
 .button-div{
-    /* background: #00ffaa; */
-    display: flex;
-    max-height: 30%;
-    flex-grow: 1;
+    display: flex;    
     align-items: center;
     justify-content: center;
-    max-width: 90%;   
+    max-width: 90%;
+    min-height: 10rem;              
 }
 button{
     border-radius: 40px; 
     background: #EAC435;
-    font-size: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    font-size: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
     border: 0;
     box-shadow: -10px 10px 0px rgba(0, 0, 0, 0.25); 
 } 
@@ -121,9 +100,52 @@ button:active{
     transform: translate(-6px, 6px);
     box-shadow: -4px 4px 0px rgba(0, 0, 0, 0.25);
 } 
+
 #credits{
+    margin: auto;
+    margin-top: 1rem;
     display: flex;
     justify-content: space-between;
-    margin-left: 10%;
-    margin-right: 10%;
+    gap: 1rem;
+    width: 85%;
+    margin-bottom: 1rem;        
+}
+@media (max-width: 820px){
+    #credits{        
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;        
+    }
+
+    #container{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        gap: 2rem;
+    }
+
+    #top-title{        
+        flex-direction: column;
+        margin-top: 1em;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;        
+    }
+    #poster{
+        height: 34rem;
+    }
+    html{
+        font: normal 12px Arial;      
+    }    
+}
+@media (max-width: 1030px){
+    .button-div{
+        max-width: 100%;
+    }
+    #card{
+        max-width: 100%;
+    }
+
 }
